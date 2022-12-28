@@ -7,6 +7,8 @@ import './App.css';
 const App = () => (
   <div className="App">
     <Box>
+      <div className="calendar-panel" />
+      <div className="weather-panel" />
     </Box>
   </div>
 );
