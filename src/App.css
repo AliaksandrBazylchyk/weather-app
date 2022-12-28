@@ -1,0 +1,10 @@
+.App {
+    width: 100vw;
+    height: 100vh;
+
+    background-image: url("./assets/background-1920x1080.jpg");
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
