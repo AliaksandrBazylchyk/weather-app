@@ -8,3 +8,13 @@
     justify-content: center;
     align-items: center;
 }
+
+.text-title {
+    width: auto;
+    padding: 3px 10px;
+    text-align: center;
+    color: white;
+    border-radius: 7px;
+    background-color: rgb(43,50,65);
+    font-family: Calibri, serif;
+}
