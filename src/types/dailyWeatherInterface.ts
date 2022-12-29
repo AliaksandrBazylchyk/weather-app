@@ -46,6 +46,7 @@ export interface DailyWeather {
   'rain': RainWeather,
   'snow': SnowWeather,
   'dt': string,
+  'dt_txt': Date
   'sys': {}
   'timezone': string,
   'id': string,

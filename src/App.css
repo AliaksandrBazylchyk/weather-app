@@ -10,64 +10,11 @@
 }
 
 .text-title {
+    width: auto;
+    padding: 3px 10px;
     text-align: center;
     color: white;
     border-radius: 7px;
     background-color: rgb(43,50,65);
-    width: auto;
-    padding: 3px 10px;
     font-family: Calibri, serif;
-}
-
-.calendar-panel {
-    height: 65%;
-}
-
-.weather-panel {
-    height: 35%;
-
-    background-color: #313a4d;
-    opacity: 0.9;
-
-    display: flex;
-    flex-direction: row;
-}
-
-.weather-panel-today {
-    width: 35%;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.today-icon {
-    width: 60%;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.today-info {
-    width: 40%;
-
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.today-temperature {
-    text-align: center;
-    font-size: 24pt;
-    color: white;
-    font-family: "Arial", serif;
-}
-
-.weather-panel-weekly {
-    width: 65%;
-
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
 }
