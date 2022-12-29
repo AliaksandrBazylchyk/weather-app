@@ -18,4 +18,23 @@
 
     background-color: #505050;
     opacity: 0.9;
+
+    display: flex;
+    flex-direction: row;
+}
+
+.weather-panel-today {
+    width: 30%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.weather-panel-weekly {
+    width: 70%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
 }
