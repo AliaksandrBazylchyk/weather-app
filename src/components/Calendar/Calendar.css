@@ -1,3 +1,54 @@
 .calendar-panel {
     height: 65%;
+
+    display: flex;
+}
+
+.left-part {
+    width: 50%;
+    height: 100%;
+
+    padding: 10% 0 0 5%;
+
+    color: white;
+}
+
+.calendar-item {
+    display: flex;
+    flex-direction: row;
+
+    gap: 10px;
+    margin-bottom: 5px;
+}
+
+.calendar-item-time {
+    width: auto;
+    padding: 3px 10px;
+    text-align: center;
+    color: white;
+    border-radius: 7px;
+    background-color: rgb(43,50,65);
+    font-family: Calibri, serif;
+}
+
+.right-part {
+    width: 50%;
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+
+    padding: 10% 5% 0 0;
+
+    color: white;
+    font-family: Calibri, serif;
+}
+
+.city-name {
+    text-align: right;
+    font-size: 24pt;
+}
+
+.country-name {
+    text-align: right;
 }

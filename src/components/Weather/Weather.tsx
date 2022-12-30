@@ -33,7 +33,7 @@ const Weather = (props: WeatherProps) => {
           />
         </div>
         <div className="today-info">
-          <span className="text-title">Today</span>
+          <span className="text-title">{t('words.today')}</span>
           <span className="today-temperature">
             {dailyWeather?.main.temp}
             &#176;
