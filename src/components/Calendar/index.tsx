@@ -7,6 +7,7 @@ import DateTime from './DateTime';
 
 import './styles.css';
 import SignButton from './SignButton/SignButton';
+import CalendarList from './CalendarList';
 
 export interface CalendarProps {
   city: string | undefined,
@@ -27,16 +28,7 @@ const Calendar = (props: CalendarProps) => {
       <SignButton apiCalendar={apiCalendar} setEvents={setEvents} auth={auth} setAuth={setAuth} />
       <div className="left-part">
         <DateTime />
-        <div className="calendar-holder">
-          {events
-            ? events?.map((item) => (
-              <div className="calendar-item" key={item.id}>
-                <span className="calendar-item-time">{`${item.start.dateTime.toString()}`}</span>
-                <span className="calendar-item-summary">{item.summary}</span>
-              </div>
-            ))
-            : <button type="button" onClick={getEvents}>get</button>}
-        </div>
+        <CalendarList events={events} getEvents={getEvents} auth={auth} />
       </div>
       <div className="right-part">
         <span className="city-name">{city}</span>

@@ -22,27 +22,25 @@ const SignButton = (props: SignInButtonProps) => {
 
   const signIn = () => {
     apiCalendar.handleAuthClick();
-    localStorage.setItem('auth', 'true');
     setAuth(true);
   };
 
   const signOut = () => {
     apiCalendar.handleSignoutClick();
-    localStorage.setItem('auth', 'false');
     setAuth(false);
     setEvents(null);
   };
-
   return (
     <button
       className="sign-button"
       id={(auth && 'sign-in') || 'sign-out'}
       type="button"
-      onClick={() => (auth && signOut()) || signIn()}
+      onClick={() => {
+        if (auth) { signOut(); } else { signIn(); }
+      }}
     >
       {(!auth && <GoogleLogo />) || <SignOutLogo />}
     </button>
-
   );
 };
 
