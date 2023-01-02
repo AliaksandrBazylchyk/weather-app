@@ -1,0 +1,30 @@
+.weather-panel-today {
+    width: 35%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.today-icon {
+    width: 60%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.today-info {
+    width: 40%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.today-temperature {
+    text-align: center;
+    font-size: 24pt;
+    color: white;
+    font-family: "Arial", serif;
+}

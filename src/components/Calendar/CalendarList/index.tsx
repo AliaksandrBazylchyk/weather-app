@@ -16,7 +16,7 @@ const CalendarList = (props : CalendarListProps) => {
 
   return (
     <div className="calendar-holder">
-      { !auth && <span className="authorize-helper">login pls</span> }
+      { !auth && <span className="authorize-helper">login please...</span> }
       { auth && events
         && events?.map((item) => (
           <div className="calendar-item" key={item.id}>
