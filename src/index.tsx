@@ -1,6 +1,22 @@
-import React from "react";
-import ReactDOM from "react-dom";
+import React from 'react';
+import ReactDOM from 'react-dom/client';
 
-import { App } from "./components/App";
+import { BrowserRouter } from 'react-router-dom';
 
-ReactDOM.render(<App num={1234} />, document.getElementById("root"));
+import './i18n';
+import App from './App';
+
+import GlobalStyle from './styles/global';
+
+const root = ReactDOM.createRoot(
+  document.getElementById('root'),
+);
+
+root.render(
+  <React.StrictMode>
+    <BrowserRouter>
+      <GlobalStyle />
+      <App />
+    </BrowserRouter>
+  </React.StrictMode>,
+);
