@@ -36,6 +36,16 @@ export interface SnowWeather {
   '1h': number,
   '3h': number,
 }
+
+export interface SysWeatherInfo {
+  'type': string,
+  'id':string,
+  'message': string
+  'country': string
+  'sunrise':string
+  'sunset': string
+}
+
 export interface DailyWeather {
   'coord': Cords,
   'weather': Weather[],
@@ -46,8 +56,8 @@ export interface DailyWeather {
   'rain': RainWeather,
   'snow': SnowWeather,
   'dt': string,
-  'dt_txt': Date
-  'sys': {}
+  'dt_txt': Date,
+  'sys': SysWeatherInfo,
   'timezone': string,
   'id': string,
   'name': string,

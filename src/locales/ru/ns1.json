@@ -1,4 +1,7 @@
 {
+  "words": {
+    "today": "Сегодня"
+  },
   "weekdays": {
     "mon": "Пн",
     "tue": "Вт",

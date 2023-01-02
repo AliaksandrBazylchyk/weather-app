@@ -1,4 +1,7 @@
 {
+  "words": {
+    "today": "Today"
+  },
   "weekdays": {
     "mon": "Mon",
     "tue": "Tue",

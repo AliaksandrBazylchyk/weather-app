@@ -1,0 +1,36 @@
+.calendar-holder {
+    margin-top: 20px;
+}
+
+.calendar-item {
+    width: 200px;
+    margin-bottom: 30px;
+
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+
+    align-items: center;
+}
+
+.calendar-item-time {
+    width: 35px;
+    padding: 3px 10px;
+    text-align: center;
+    color: white;
+    border-radius: 7px;
+    background-color: rgb(43,50,65);
+    font-family: Calibri, serif;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.calendar-item-summary {
+    display: block;
+    width: 165px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}

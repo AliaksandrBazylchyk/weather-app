@@ -1,6 +1,6 @@
 import React from 'react';
 
-import './Box.css';
+import './styles.css';
 
 interface BoxProps {
   children: React.ReactNode,
@@ -14,5 +14,4 @@ const Box = (props: BoxProps) => {
     </div>
   );
 };
-
 export default Box;
