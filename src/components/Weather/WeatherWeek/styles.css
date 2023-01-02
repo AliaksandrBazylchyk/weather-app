@@ -1,0 +1,37 @@
+
+.weather-panel-weekly {
+    width: 65%;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    justify-content: space-evenly;
+    overflow-y: scroll;
+    flex-wrap: wrap;
+    padding-top: 10px;
+}
+
+.weather-panel-weekly::-webkit-scrollbar {
+    width: 10px;
+}
+
+.weather-panel-weekly::-webkit-scrollbar-track {
+    border-radius: 10px;
+}
+
+.weather-panel-weekly::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background: #26282f;
+}
+
+.day-weather-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.week-temperature {
+    text-align: center;
+    font-size: 12pt;
+    color: white;
+    width: 100%;
+    font-family: "Arial", serif;
+}

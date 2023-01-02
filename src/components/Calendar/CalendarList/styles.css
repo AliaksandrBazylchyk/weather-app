@@ -34,3 +34,10 @@
     overflow: hidden;
     text-overflow: ellipsis;
 }
+
+.authorize-helper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    font-family: Calibri, serif;
+}
