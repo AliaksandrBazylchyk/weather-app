@@ -9,9 +9,9 @@ import { GApiConfig } from './utils/configs/googleCalendarApiConfig';
 import { DailyWeather } from './types/dailyWeatherInterface';
 import { WeeklyWeather } from './types/weeklyWeatherInterface';
 
-import Box from './components/Box/Box';
-import Calendar from './components/Calendar/Calendar';
-import Weather from './components/Weather/Weather';
+import Weather from './components/Weather';
+import Calendar from './components/Calendar';
+import Box from './components/Box';
 
 import './App.css';
 
@@ -20,8 +20,7 @@ const App = () => {
   const [lng, setLng] = useState<number | null>(null);
   const [status, setStatus] = useState<string | null>(null);
 
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const [apiCalendar, setApiCalendar] = useState<ApiCalendar>(new ApiCalendar(GApiConfig));
+  const [apiCalendar] = useState<ApiCalendar>(new ApiCalendar(GApiConfig));
 
   const [dailyWeather, setDailyWeather] = useState<DailyWeather | null>(null);
   const [weeklyWeather, setWeeklyWeather] = useState<WeeklyWeather | null>(null);

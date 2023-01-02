@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 
-import './DateTime.css';
+import './styles.css';
 
 const DateTime = () => {
   const [time, setTime] = useState<Date>(new Date());

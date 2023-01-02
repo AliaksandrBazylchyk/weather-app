@@ -6,7 +6,7 @@ import { WeeklyWeather } from '../../types/weeklyWeatherInterface';
 
 import { weekDictionary } from '../../utils/dictionaries/WeekDictionary';
 
-import './Weather.css';
+import './styles.css';
 
 export interface WeatherProps {
   status: string | null,
