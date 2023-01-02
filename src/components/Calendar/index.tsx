@@ -4,10 +4,14 @@ import ApiCalendar from 'react-google-calendar-api';
 import { EventItem } from '../../types/EventItemInterface';
 
 import DateTime from './DateTime';
-
-import './styles.css';
-import SignButton from './SignButton/SignButton';
 import CalendarList from './CalendarList';
+
+import { ReactComponent as GoogleLogo } from '../../assets/google-logo.svg';
+import { ReactComponent as SignOutLogo } from '../../assets/sign-out-logo.svg';
+
+import {
+  CalendarPanel, CityName, CountryAbbreviation, LeftPart, RightPart, SignButton,
+} from './styles';
 
 export interface CalendarProps {
   city: string | undefined,
@@ -23,18 +27,38 @@ const Calendar = (props: CalendarProps) => {
       ({ result }: any) => { setEvents(result.items); },
     );
   };
+
+  const signIn = () => {
+    apiCalendar.handleAuthClick();
+    setAuth(true);
+  };
+
+  const signOut = () => {
+    apiCalendar.handleSignoutClick();
+    setAuth(false);
+    setEvents(null);
+  };
+
   return (
-    <div className="calendar-panel">
-      <SignButton apiCalendar={apiCalendar} setEvents={setEvents} auth={auth} setAuth={setAuth} />
-      <div className="left-part">
+    <CalendarPanel>
+      <SignButton
+        id={(auth && 'sign-in') || 'sign-out'}
+        type="button"
+        onClick={() => { if (auth) { signOut(); } else { signIn(); } }}
+      >
+        {(!auth && <GoogleLogo />) || <SignOutLogo />}
+      </SignButton>
+
+      <LeftPart>
         <DateTime />
         <CalendarList events={events} getEvents={getEvents} auth={auth} />
-      </div>
-      <div className="right-part">
-        <span className="city-name">{city}</span>
-        <span className="country-name">{country}</span>
-      </div>
-    </div>
+      </LeftPart>
+      <RightPart>
+        <CityName>{city}</CityName>
+        <CountryAbbreviation>{country}</CountryAbbreviation>
+        {/* <span>Or you can choose another...</span> */}
+      </RightPart>
+    </CalendarPanel>
   );
 };
 

@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 
-import './styles.css';
+import {
+  DateNow, DateTimeHolder, HoursFormat, TimeNow,
+} from './styles';
 
 const DateTime = () => {
   const [time, setTime] = useState<Date>(new Date());
@@ -20,22 +22,20 @@ const DateTime = () => {
     hours %= 12;
     hours = hours || 12;
     return (
-      <>
-        <span className="time-now">{`${hours}:${minutes}`}</span>
-        <span className="hours-format">{ap}</span>
-      </>
+      <TimeNow>
+        {`${hours}:${minutes}`}
+        <HoursFormat>{ap}</HoursFormat>
+      </TimeNow>
     );
   };
   return (
-    <div className="date-time">
-      <span className="time-now">
-        {dateTime(time)}
-      </span>
-      <span className="date-now">
+    <DateTimeHolder>
+      {dateTime(time)}
+      <DateNow>
         {/* TODO i18next */}
         {time.toDateString()}
-      </span>
-    </div>
+      </DateNow>
+    </DateTimeHolder>
   );
 };
 

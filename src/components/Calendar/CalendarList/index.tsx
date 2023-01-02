@@ -2,7 +2,10 @@ import React from 'react';
 
 import { EventItem } from '../../../types/EventItemInterface';
 
-import './styles.css';
+import {
+  AuthorizeHelper,
+  CalendarHolder, CalendarItem, CalendarItemSummary, CalendarItemTime, GetEventsButton,
+} from './styles';
 
 export interface CalendarListProps {
   events: EventItem[] | null,
@@ -13,20 +16,19 @@ export interface CalendarListProps {
 const CalendarList = (props : CalendarListProps) => {
   const { events, getEvents, auth } = props;
   const convertDate = (time: Date) => new Date(time).toTimeString().substring(0, 5);
-
   return (
-    <div className="calendar-holder">
-      { !auth && <span className="authorize-helper">login please...</span> }
+    <CalendarHolder>
+      { !auth && <AuthorizeHelper>login please...</AuthorizeHelper> }
       { auth && events
         && events?.map((item) => (
-          <div className="calendar-item" key={item.id}>
-            <span className="calendar-item-time">{`${convertDate(item.start.dateTime)}`}</span>
-            <span className="calendar-item-summary">{item.summary}</span>
-          </div>
+          <CalendarItem key={item.id}>
+            <CalendarItemTime>{`${convertDate(item.start.dateTime)}`}</CalendarItemTime>
+            <CalendarItemSummary>{item.summary}</CalendarItemSummary>
+          </CalendarItem>
         ))}
       { auth && !events
-          && <button type="button" onClick={getEvents}>get</button>}
-    </div>
+          && <GetEventsButton type="button" onClick={getEvents}>get</GetEventsButton>}
+    </CalendarHolder>
   );
 };
 
