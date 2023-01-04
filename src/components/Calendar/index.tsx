@@ -1,14 +1,13 @@
 import React, { useState } from 'react';
 import ApiCalendar from 'react-google-calendar-api';
 
-import { EventItem } from '../../types/EventItemInterface';
+import EventItem from '@interfaces/EventItemInterface';
+import GoogleLogo from '@assets/GoogleLogo.svg';
+import SignOutLogo from '@assets/SignOutLogo.svg';
 
 import DateTime from './DateTime';
+
 import CalendarList from './CalendarList';
-
-import { ReactComponent as GoogleLogo } from '../../assets/google-logo.svg';
-import { ReactComponent as SignOutLogo } from '../../assets/sign-out-logo.svg';
-
 import {
   CalendarPanel, CityName, CountryAbbreviation, LeftPart, RightPart, SignButton,
 } from './styles';

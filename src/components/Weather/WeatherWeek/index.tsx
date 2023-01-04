@@ -2,8 +2,8 @@ import React from 'react';
 
 import { useTranslation } from 'react-i18next';
 
-import { weekDictionary } from '../../../utils/dictionaries/WeekDictionary';
-import { WeeklyWeather } from '../../../types/weeklyWeatherInterface';
+import { WeeklyWeather } from '@interfaces/WeeklyWeatherInterface';
+import { weekDictionary } from '@utils/dictionaries/WeekDictionary';
 
 import { DayTitle } from '../styles';
 import { WeatherDayInfo, WeatherDayTemperature, WeeklyWeatherHolder } from './styles';
@@ -15,6 +15,11 @@ const WeatherWeek = (props: WeatherWeekProps) => {
   const { weeklyWeather } = props;
   // @ts-ignore
   const { t } = useTranslation();
+
+  // TODO Delete ts ignore
+  // @ts-ignore
+  const getDay = (date: Date) : string => t(`weekdays.${weekDictionary[new Date(date).getDay()]}`);
+
   return (
     <WeeklyWeatherHolder>
       { weeklyWeather?.list.map((dayWeather, index) => {
@@ -22,7 +27,7 @@ const WeatherWeek = (props: WeatherWeekProps) => {
           return (
             <WeatherDayInfo key={dayWeather.dt_txt.toString()}>
               <DayTitle>
-                { t(`weekdays.${weekDictionary[new Date(dayWeather.dt_txt).getDay()]}`) }
+                { getDay(dayWeather.dt_txt) }
               </DayTitle>
               <img
                 src={`${process.env.REACT_APP_OPEN_WEATHER_ICONS_ENDPOINT}/${dayWeather?.weather[0].icon}.png`}

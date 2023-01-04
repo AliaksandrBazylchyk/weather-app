@@ -1,24 +1,56 @@
 {
   "compilerOptions": {
+    "outDir": "./public/",
+    "noImplicitAny": true,
+    "module": "es6",
     "target": "es5",
-    "lib": [
-      "dom",
-      "dom.iterable",
-      "esnext"
-    ],
+    "jsx": "react",
     "allowJs": true,
-    "skipLibCheck": true,
-    "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
-    "strict": true,
-    "forceConsistentCasingInFileNames": true,
-    "noFallthroughCasesInSwitch": true,
-    "module": "esnext",
-    "moduleResolution": "node",
+    "moduleResolution": "Node",
+    "esModuleInterop": true,
     "resolveJsonModule": true,
-    "isolatedModules": true,
-    "noEmit": true,
-    "jsx": "react-jsx"
+    "baseUrl": "./",
+    "paths": {
+      "@assets/*": [
+        "src/assets/*"
+      ],
+      "@components/*": [
+        "src/components/*"
+      ],
+      "@pages/*": [
+        "src/pages/*"
+      ],
+      "@locales/*": [
+        "src/locales/*"
+      ],
+      "@services/*": [
+        "src/utils/services/*"
+      ],
+      "@styles/*": [
+        "src/styles/*"
+      ],
+      "@interfaces/*": [
+        "src/utils/interfaces/*"
+      ],
+      "@configs/*": [
+        "src/utils/configs/*"
+      ],
+      "@utils/*": [
+        "src/utils/*"
+      ]
+    }
   },
-  "include": ["src", "src/**/*.ts", "src/**/*.js", "test/**/*.ts"]
+  "ts-node": {
+    "compilerOptions": {
+      "module": "CommonJS"
+    }
+  },
+  "include": [
+    "src",
+    "src/**/*.ts",
+    "test/**/*.ts",
+    "src/custom.d.ts",
+    "custom.d.ts"
+  ]
 }

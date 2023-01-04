@@ -1,7 +1,7 @@
 /// <reference types="react-scripts" />
 import 'i18next';
-import ns_en from 'locales/en/ns1.json';
-import ns_ru from 'locales/ru/ns1.json';
+import ns_en from './locales/en/ns1.json';
+import ns_ru from './locales/ru/ns1.json';
 
 declare module 'i18next' {
   interface CustomTypeOptions {

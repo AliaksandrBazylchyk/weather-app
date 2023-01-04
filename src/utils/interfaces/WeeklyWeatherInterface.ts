@@ -1,4 +1,4 @@
-import { Cords, DailyWeather } from './dailyWeatherInterface';
+import { Cords, DailyWeather } from './DailyWeatherInterface';
 
 export interface City {
   'cords': Cords,

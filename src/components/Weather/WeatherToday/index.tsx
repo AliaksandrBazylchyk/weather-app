@@ -1,7 +1,7 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 
-import { DailyWeather } from '../../../types/dailyWeatherInterface';
+import { DailyWeather } from '@interfaces/DailyWeatherInterface';
 
 import { DayTitle } from '../styles';
 import {

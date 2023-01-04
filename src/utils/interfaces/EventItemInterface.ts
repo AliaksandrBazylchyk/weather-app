@@ -1,4 +1,3 @@
-// eslint-disable-next-line import/prefer-default-export
 export interface EventItem {
   'kind': string,
   'etag': string,
@@ -17,3 +16,5 @@ export interface EventItem {
   'reminders': { 'useDefault': boolean },
   'eventType': string,
 }
+
+export default EventItem;
