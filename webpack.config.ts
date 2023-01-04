@@ -6,7 +6,7 @@ import 'webpack-dev-server';
 
 const config: webpack.Configuration = {
     mode: 'development',
-    entry: path.resolve(__dirname, 'src','index.tsx'),
+    entry: path.resolve(__dirname, 'src', 'index.tsx'),
     output: {
         filename: 'bundle.js',
         path: path.resolve(__dirname, 'dist'),
@@ -39,7 +39,18 @@ const config: webpack.Configuration = {
     },
     resolve:
         {
-            extensions: ['.tsx', '.ts', '.js'],
+            alias: {
+                '@assets': path.resolve(__dirname, './src/assets'),
+                '@components': path.resolve(__dirname, './src/components'),
+                '@pages': path.resolve(__dirname, './src/pages'),
+                '@locales': path.resolve(__dirname, './src/locales'),
+                '@styles': path.resolve(__dirname, './src/styles'),
+                '@services': path.resolve(__dirname, './src/utils/services'),
+                '@interfaces': path.resolve(__dirname, './src/utils/interfaces'),
+                '@configs': path.resolve(__dirname, './src/utils/configs'),
+                '@utils': path.resolve(__dirname, './src/utils')
+            },
+            extensions: ['.tsx', '.ts', '.js', '.jpg', '.svg', '.png'],
         },
     plugins: [
         new HtmlWebpackPlugin({

@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { EventItem } from '../../../types/EventItemInterface';
+import { EventItem } from '@interfaces/EventItemInterface';
 
 import {
   AuthorizeHelper,

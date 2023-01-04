@@ -9,12 +9,48 @@
     "allowSyntheticDefaultImports": true,
     "moduleResolution": "Node",
     "esModuleInterop": true,
-    "resolveJsonModule": true
+    "resolveJsonModule": true,
+    "baseUrl": "./",
+    "paths": {
+      "@assets/*": [
+        "src/assets/*"
+      ],
+      "@components/*": [
+        "src/components/*"
+      ],
+      "@pages/*": [
+        "src/pages/*"
+      ],
+      "@locales/*": [
+        "src/locales/*"
+      ],
+      "@services/*": [
+        "src/utils/services/*"
+      ],
+      "@styles/*": [
+        "src/styles/*"
+      ],
+      "@interfaces/*": [
+        "src/utils/interfaces/*"
+      ],
+      "@configs/*": [
+        "src/utils/configs/*"
+      ],
+      "@utils/*": [
+        "src/utils/*"
+      ]
+    }
   },
   "ts-node": {
     "compilerOptions": {
       "module": "CommonJS"
     }
   },
-  "include": ["src","src/**/*.ts", "test/**/*.ts", "react-app-env.d.ts"]
+  "include": [
+    "src",
+    "src/**/*.ts",
+    "test/**/*.ts",
+    "src/custom.d.ts",
+    "custom.d.ts"
+  ]
 }

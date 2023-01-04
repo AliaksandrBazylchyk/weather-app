@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
-import backgroundImage from '../../assets/background-1920x1080.jpg';
-import backgroundImage2 from '../../assets/background-2-1920x1080.jpg';
+import backgroundImage from '@assets/background-1920x1080.jpg';
+import backgroundImage2 from '@assets/background-2-1920x1080.jpg';
 
 export const HomeHandler = styled.div`
   width: 100vw;

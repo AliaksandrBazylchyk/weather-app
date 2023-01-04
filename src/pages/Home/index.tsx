@@ -1,16 +1,16 @@
 import React, { useEffect, useState } from 'react';
 
 import ApiCalendar from 'react-google-calendar-api';
-import { GApiConfig } from '../../utils/configs/googleCalendarApiConfig';
 
-import { DailyWeather } from '../../types/dailyWeatherInterface';
-import { WeeklyWeather } from '../../types/weeklyWeatherInterface';
+import { DailyWeather } from '@interfaces/DailyWeatherInterface';
+import { WeeklyWeather } from '@interfaces/WeeklyWeatherInterface';
 
-import { getLocation } from '../../services/location.service';
-import { getDailyWeather, getWeeklyWeather } from '../../services/weather.service';
+import { getLocation } from '@services/location.service';
+import { getDailyWeather, getWeeklyWeather } from '@services/weather.service';
 
-import Calendar from '../../components/Calendar';
-import Weather from '../../components/Weather';
+import Calendar from '@components/Calendar';
+import Weather from '@components/Weather';
+import { GApiConfig } from '@configs/googleCalendarApiConfig';
 
 import { HomeHandler, Box } from './styles';
 

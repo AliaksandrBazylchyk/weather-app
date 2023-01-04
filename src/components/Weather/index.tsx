@@ -1,6 +1,6 @@
 import React from 'react';
-import { DailyWeather } from '../../types/dailyWeatherInterface';
-import { WeeklyWeather } from '../../types/weeklyWeatherInterface';
+import { DailyWeather } from '@interfaces/DailyWeatherInterface';
+import { WeeklyWeather } from '@interfaces/WeeklyWeatherInterface';
 
 import WeatherToday from './WeatherToday';
 import WeatherWeek from './WeatherWeek';
