@@ -55,7 +55,6 @@ const Calendar = (props: CalendarProps) => {
       <RightPart>
         <CityName>{city}</CityName>
         <CountryAbbreviation>{country}</CountryAbbreviation>
-        {/* <span>Or you can choose another...</span> */}
       </RightPart>
     </CalendarPanel>
   );

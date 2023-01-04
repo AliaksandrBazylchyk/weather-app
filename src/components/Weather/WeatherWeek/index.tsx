@@ -3,7 +3,7 @@ import React from 'react';
 import { useTranslation } from 'react-i18next';
 
 import { WeeklyWeather } from '@interfaces/WeeklyWeatherInterface';
-import { weekDictionary } from '@utils/dictionaries/WeekDictionary';
+import WeekEnum from '@utils/dictionaries/WeekDictionary';
 
 import { DayTitle } from '../styles';
 import { WeatherDayInfo, WeatherDayTemperature, WeeklyWeatherHolder } from './styles';
@@ -13,35 +13,34 @@ export interface WeatherWeekProps {
 }
 const WeatherWeek = (props: WeatherWeekProps) => {
   const { weeklyWeather } = props;
-  // @ts-ignore
+
   const { t } = useTranslation();
 
-  // TODO Delete ts ignore
-  // @ts-ignore
-  const getDay = (date: Date) : string => t(`weekdays.${weekDictionary[new Date(date).getDay()]}`);
+  const getDay = (date: Date) => {
+    const day : number = new Date(date).getDay();
+    const dayName : string = WeekEnum[day];
+    const str : any = `weekdays.${dayName}`;
 
+    return t(str);
+  };
   return (
     <WeeklyWeatherHolder>
-      { weeklyWeather?.list.map((dayWeather, index) => {
-        if (index % 8 === 0) {
-          return (
-            <WeatherDayInfo key={dayWeather.dt_txt.toString()}>
-              <DayTitle>
-                { getDay(dayWeather.dt_txt) }
-              </DayTitle>
-              <img
-                src={`${process.env.REACT_APP_OPEN_WEATHER_ICONS_ENDPOINT}/${dayWeather?.weather[0].icon}.png`}
-                alt={`${dayWeather?.weather[0].main}`}
-              />
-              <WeatherDayTemperature>
-                {dayWeather.main.temp}
-                &#176;
-              </WeatherDayTemperature>
-            </WeatherDayInfo>
-          );
-        }
-        return null;
-      })}
+      { weeklyWeather?.list.map((dayWeather, index) => (
+        index % 8 === 0 ? (
+          <WeatherDayInfo key={dayWeather.dt_txt.toString()}>
+            <DayTitle>
+              {getDay(dayWeather.dt_txt)}
+            </DayTitle>
+            <img
+              src={`${process.env.REACT_APP_OPEN_WEATHER_ICONS_ENDPOINT}/${dayWeather?.weather[0].icon}.png`}
+              alt={`${dayWeather?.weather[0].main}`}
+            />
+            <WeatherDayTemperature>
+              {dayWeather.main.temp}
+              &#176;
+            </WeatherDayTemperature>
+          </WeatherDayInfo>
+        ) : null))}
     </WeeklyWeatherHolder>
   );
 };

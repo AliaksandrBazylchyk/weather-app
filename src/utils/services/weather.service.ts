@@ -2,7 +2,6 @@ import axios from 'axios';
 import { DailyWeather } from '@interfaces/DailyWeatherInterface';
 import { WeeklyWeather } from '@interfaces/WeeklyWeatherInterface';
 
-// eslint-disable-next-line import/prefer-default-export
 export const getDailyWeather = async (
   lat : number,
   lng: number,

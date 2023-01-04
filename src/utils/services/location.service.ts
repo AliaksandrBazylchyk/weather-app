@@ -1,7 +1,6 @@
 import React from 'react';
 
-// eslint-disable-next-line import/prefer-default-export
-export const getLocation = async (
+const getLocation = async (
   setLat : React.Dispatch<React.SetStateAction<number | null>>,
   setLng : React.Dispatch<React.SetStateAction<number | null>>,
   setStatus : React.Dispatch<React.SetStateAction<string | null>>,
@@ -19,3 +18,5 @@ export const getLocation = async (
     });
   }
 };
+
+export default getLocation;

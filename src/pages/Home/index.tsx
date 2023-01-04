@@ -5,12 +5,12 @@ import ApiCalendar from 'react-google-calendar-api';
 import { DailyWeather } from '@interfaces/DailyWeatherInterface';
 import { WeeklyWeather } from '@interfaces/WeeklyWeatherInterface';
 
-import { getLocation } from '@services/location.service';
+import getLocation from '@services/location.service';
 import { getDailyWeather, getWeeklyWeather } from '@services/weather.service';
 
 import Calendar from '@components/Calendar';
 import Weather from '@components/Weather';
-import { GApiConfig } from '@configs/googleCalendarApiConfig';
+import GApiConfig from '@configs/googleCalendarApiConfig';
 
 import { HomeHandler, Box } from './styles';
 
